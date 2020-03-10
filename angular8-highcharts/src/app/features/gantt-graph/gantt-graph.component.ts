@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from "highcharts/highcharts-gantt";
+// @ts-ignore
+import data from '../../../assets/cars.json';
 
 declare var require: any;
 let Boost = require('highcharts/modules/boost');
@@ -11,11 +13,64 @@ noData(Highcharts);
 More(Highcharts);
 noData(Highcharts);
 
-export interface Car {
-  start: Date;
-  end: Date;
+export class Car {
+  start: number;
+  end: number;
   color: string;
   name: string;
+}
+
+function generateFakeData() {
+  let cars: Car[] = [];
+
+  for (let i = 0; i < 50; i++) {
+    const car1: Car = new Car();
+    car1.start = 946684800000;
+    car1.end = 978307200000;
+    car1.color = 'orange';
+    car1.name = 'Car ' + i;
+
+    const car2: Car = new Car();
+    car2.start = 978307200000;
+    car2.end = 1041379200000;
+    car2.color = 'red';
+    car2.name = 'Car ' + i;
+
+    const car3: Car = new Car();
+    car3.start = 1041379200000;
+    car3.end = 1136073600000;
+    car3.color = 'white';
+    car3.name = 'Car ' + i;
+
+    const car4: Car = new Car();
+    car4.start = 1136073600000;
+    car4.end = 1451606400000;
+    car4.color = 'orange';
+    car4.name = 'Car ' + i;
+
+    const car5: Car = new Car();
+    car5.start = 1451606400000;
+    car5.end = 1483228800000;
+    car5.color = 'green';
+    car5.name = 'Car ' + i;
+
+    const car6: Car = new Car();
+    car6.start = 1483228800000;
+    car6.end = 1577836800000;
+    car6.color = 'white';
+    car6.name = 'Car ' + i;
+
+    cars.push(car1);
+    cars.push(car2);
+    cars.push(car3);
+    cars.push(car4);
+    cars.push(car5);
+    cars.push(car6);
+  }
+
+  console.log('object: %O', cars);
+
+  return cars;
 }
 
 @Component({
@@ -24,7 +79,8 @@ export interface Car {
   styleUrls: ['./gantt-graph.component.css']
 })
 export class GanttGraphComponent implements OnInit {
-  cars: Car[] =
+  cars: Car[] = generateFakeData();
+
   public options: any = {
     chart:{
       type: 'gantt',
@@ -37,10 +93,21 @@ export class GanttGraphComponent implements OnInit {
       text: 'SonnyBoy3428'
     },
     yAxis: {
+      title: {
+        text: 'Cars'
+      },
       grid: {
         borderWidth: 0
       },
-      uniqueNames: true
+      lables: {
+        align: 'left'
+      },
+      uniqueNames: true,
+      scrollbar: {
+        enabled: true,
+        showFull: false
+      },
+      max: 50
     },
     xAxis: [{
       grid: {
@@ -51,8 +118,8 @@ export class GanttGraphComponent implements OnInit {
       },
       opposite: true,
       tickInterval: 1000 * 60 * 60 * 24 * 365, // Year
-      min: Date.UTC(2000, 0,0),
-      max: Date.UTC(2030, 12,31)
+      min: Date.UTC(2000, 0, 0),
+      max: Date.UTC(2030, 12, 31)
     },{
       grid: {
         enabled: false
@@ -62,141 +129,14 @@ export class GanttGraphComponent implements OnInit {
       },
       opposite: false,
       tickInterval: 1000 * 60 * 60 * 24 * 365, // Year
-      min: Date.UTC(2000, 0,0),
-      max: Date.UTC(2030, 12,31)
+      min: Date.UTC(2000, 0, 0),
+      max: Date.UTC(2030, 12, 31)
     }],
     series: [{
       type: 'gantt',
-      borderColor: "black",
-      data: [{
-        start: Date.UTC(2000, 0, 1),
-        end: Date.UTC(2001, 0, 1),
-        color: 'orange',
-        name: 'Car 1'
-      }, {
-        start: Date.UTC(2001, 0, 1),
-        end: Date.UTC(2003, 0, 1),
-        color: 'red',
-        name: 'Car 1'
-      }, {
-        start: Date.UTC(2003, 0, 1),
-        end: Date.UTC(2006, 0, 1),
-        color: 'white',
-        name: 'Car 1'
-      }, {
-        start: Date.UTC(2006, 0, 1),
-        end: Date.UTC(2016, 0, 1),
-        color: 'orange',
-        name: 'Car 1'
-      }, {
-        start: Date.UTC(2016, 0, 1),
-        end: Date.UTC(2017, 0, 1),
-        color: 'green',
-        name: 'Car 1'
-      }, {
-        start: Date.UTC(2017, 0, 1),
-        end: Date.UTC(2020, 0, 1),
-        color: 'white',
-        name: 'Car 1'
-      },
-        {
-          start: Date.UTC(2000, 0, 1),
-          end: Date.UTC(2005, 0, 1),
-          color: 'orange',
-          name: 'Car 2'
-        }, {
-          start: Date.UTC(2005, 0, 1),
-          end: Date.UTC(2006, 0, 1),
-          color: 'red',
-          name: 'Car 2'
-        }, {
-          start: Date.UTC(2006, 0, 1),
-          end: Date.UTC(2007, 0, 1),
-          color: 'white',
-          name: 'Car 2'
-        }, {
-          start: Date.UTC(2007, 0, 1),
-          end: Date.UTC(2010, 0, 1),
-          color: 'orange',
-          name: 'Car 2'
-        }, {
-          start: Date.UTC(2010, 0, 1),
-          end: Date.UTC(2011, 0, 1),
-          color: 'green',
-          name: 'Car 2'
-        }, {
-          start: Date.UTC(2011, 0, 1),
-          end: Date.UTC(2015, 0, 1),
-          color: 'white',
-          name: 'Car 2'
-        },
-        {
-          start: Date.UTC(2000, 0, 1),
-          end: Date.UTC(2003, 0, 1),
-          color: 'orange',
-          name: 'Car 3'
-        }, {
-          start: Date.UTC(2003, 0, 1),
-          end: Date.UTC(2004, 0, 1),
-          color: 'red',
-          name: 'Car 3'
-        }, {
-          start: Date.UTC(2004, 0, 1),
-          end: Date.UTC(2016, 0, 1),
-          color: 'white',
-          name: 'Car 3'
-        }, {
-          start: Date.UTC(2016, 0, 1),
-          end: Date.UTC(2018, 0, 1),
-          color: 'orange',
-          name: 'Car 3'
-        }, {
-          start: Date.UTC(2018, 0, 1),
-          end: Date.UTC(2020, 0, 1),
-          color: 'green',
-          name: 'Car 3'
-        }, {
-          start: Date.UTC(2020, 0, 1),
-          end: Date.UTC(2025, 0, 1),
-          color: 'white',
-          name: 'Car 3'
-        },
-        {
-          start: Date.UTC(2000, 0, 1),
-          end: Date.UTC(2006, 0, 1),
-          color: 'orange',
-          name: 'Car 4'
-        }, {
-          start: Date.UTC(2006, 0, 1),
-          end: Date.UTC(2007, 0, 1),
-          color: 'red',
-          name: 'Car 4'
-        }, {
-          start: Date.UTC(2007, 0, 1),
-          end: Date.UTC(2009, 0, 1),
-          color: 'white',
-          name: 'Car 4'
-        }, {
-          start: Date.UTC(2000, 0, 1),
-          end: Date.UTC(2004, 0, 1),
-          color: 'orange',
-          name: 'Car 5'
-        }, {
-          start: Date.UTC(2004, 0, 1),
-          end: Date.UTC(2005, 0, 1),
-          color: 'red',
-          name: 'Car 5'
-        }, {
-          start: Date.UTC(2005, 0, 1),
-          end: Date.UTC(2007, 0, 1),
-          color: 'white',
-          name: 'Car 5'
-        }, {
-          start: Date.UTC(2007, 0, 1),
-          end: Date.UTC(2010, 0, 1),
-          color: 'green',
-          name: 'Car 5'
-        }]
+      borderColor: 'black',
+      turboThreshold: 7000,
+      data: this.cars
     }]
   }
 
