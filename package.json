@@ -1,0 +1,22 @@
+{
+  "name": "highchartsexercise",
+  "version": "1.0.0",
+  "description": "A small highcharts exercise",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SonnyBoy3428/HighchartsExercise.git"
+  },
+  "author": "Dustin Noah Young",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SonnyBoy3428/HighchartsExercise/issues"
+  },
+  "homepage": "https://github.com/SonnyBoy3428/HighchartsExercise#readme",
+  "dependencies": {
+    "highcharts": "^8.0.3"
+  }
+}
