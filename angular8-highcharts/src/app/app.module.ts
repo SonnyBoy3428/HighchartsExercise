@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OutputGraphComponent } from './features/output-graph/output-graph.component';
+import { GanttGraphComponent } from './features/gantt-graph/gantt-graph.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OutputGraphComponent
+    OutputGraphComponent,
+    GanttGraphComponent
   ],
   imports: [
     BrowserModule,

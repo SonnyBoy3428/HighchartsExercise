@@ -1,0 +1,128 @@
+[
+  {
+    "start": 946684800000,
+    "end": 978307200000,
+    "color": "orange",
+    "name": "Car 1"
+  }, {
+    "start": 978307200000,
+    "end": 1041379200000,
+    "color": "red",
+    "name": "Car 1"
+  }, {
+    "start": 1041379200000,
+    "end": 1136073600000,
+    "color": "white",
+    "name": "Car 1"
+  }, {
+    "start": 1136073600000,
+    "end": 1451606400000,
+    "color": "orange",
+    "name": "Car 1"
+  }, {
+    "start": 1451606400000,
+    "end": 1483228800000,
+    "color": "green",
+    "name": "Car 1"
+  }, {
+    "start": 1483228800000,
+    "end": 1577836800000,
+    "color": "white",
+    "name": "Car 1"
+  }, {
+    "start": 946684800000,
+    "end": 1104537600000,
+    "color": "orange",
+    "name": "Car 2"
+  }, {
+    "start": 1104537600000,
+    "end": 1136073600000,
+    "color": "red",
+    "name": "Car 2"
+  }, {
+    "start": 1136073600000,
+    "end": 1167609600000,
+    "color": "white",
+    "name": "Car 2"
+  }, {
+    "start": 1167609600000,
+    "end": 1262304000000,
+    "color": "orange",
+    "name": "Car 2"
+  }, {
+    "start": 1262304000000,
+    "end": 1293840000000,
+    "color": "green",
+    "name": "Car 2"
+  }, {
+    "start": 1293840000000,
+    "end": 1420070400000,
+    "color": "white",
+    "name": "Car 2"
+  }, {
+    "start": 946684800000,
+    "end": 1041379200000,
+    "color": "orange",
+    "name": "Car 3"
+  }, {
+    "start": 1041379200000,
+    "end": 1072915200000,
+    "color": "red",
+    "name": "Car 3"
+  }, {
+    "start": 1072915200000,
+    "end": 1451606400000,
+    "color": "white",
+    "name": "Car 3"
+  }, {
+    "start": 1451606400000,
+    "end": 1514764800000,
+    "color": "orange",
+    "name": "Car 3"
+  }, {
+    "start": 1514764800000,
+    "end": 1577836800000,
+    "color": "green",
+    "name": "Car 3"
+  }, {
+    "start": 1577836800000,
+    "end": 1735689600000,
+    "color": "white",
+    "name": "Car 3"
+  }, {
+    "start": 946684800000,
+    "end": 1136073600000,
+    "color": "orange",
+    "name": "Car 4"
+  }, {
+    "start": 1136073600000,
+    "end": 1167609600000,
+    "color": "red",
+    "name": "Car 4"
+  }, {
+    "start": 1167609600000,
+    "end": 1230768000000,
+    "color": "white",
+    "name": "Car 4"
+  }, {
+    "start": 946684800000,
+    "end": 1072915200000,
+    "color": "orange",
+    "name": "Car 5"
+  }, {
+    "start": 1072915200000,
+    "end": 1104537600000,
+    "color": "red",
+    "name": "Car 5"
+  }, {
+    "start": 1104537600000,
+    "end": 1167609600000,
+    "color": "white",
+    "name": "Car 5"
+  }, {
+    "start": 1167609600000,
+    "end": 1262304000000,
+    "color": "green",
+    "name": "Car 5"
+  }
+]
